@@ -1,0 +1,4 @@
+player_id,game_date,cycle_day,cycle_start,menstruation_duration,ovulation_day,cramps,mood,discharge,bbt,hr,hrv,sleep_quality,sleep_duration,skin_temp,breathing_rate,flow_intensity,lh,fsh,estrogen,progesterone,rest_days,opponent_rating,impact_flag
+P001,2025-07-01,2,2025-06-29,5,13,1,2,0,36.5,78,55,0.8,7,33.2,15,2,15,8,110,5,2,0.65,1
+P002,2025-07-01,10,2025-06-21,5,13,0,1,0,36.8,82,60,0.85,8,33.4,16,1,12,7,98,6,3,0.8,0
+P003,2025-07-01,13,2025-06-18,5,13,2,3,1,36.6,80,52,0.7,6.5,33.1,14,3,18,11,122,4,1,0.45,1

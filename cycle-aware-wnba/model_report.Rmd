@@ -1,0 +1,10 @@
+---
+title: "Q4Trackr Model Report"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(glmnet)
+source("models/model_formula.R")

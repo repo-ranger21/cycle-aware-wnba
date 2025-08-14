@@ -1,0 +1,55 @@
+---
+title: "Q4Trackr Satirical Cycle Dashboard"
+output: flexdashboard::flex_dashboard
+runtime: shiny
+---
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### 🩸 CrampCast™: Symptom Severity
+
+```{r}
+library(shiny)
+library(ggplot2)
+
+symptoms <- data.frame(
+  symptom = c("Cramps", "Mood Swings", "Bloating"),
+  severity = c(8, 7, 6)
+)
+
+renderPlot({
+  ggplot(symptoms, aes(x = symptom, y = severity, fill = symptom)) +
+    geom_bar(stat = "identity") +
+    ylim(0, 10) +
+    labs(title = "CrampCast™ Severity Forecast", y = "Severity (Satirical Units)") +
+    theme_minimal()
+})
+```
+
+Satirical caption: _“70% chance of irrational rage. Forecast issued by the Uterus Weather Bureau.”_
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### MoodSwingMeter™
+
+```{r}
+mood_index <- sample(1:10, 1)
+renderGauge({
+  flexdashboard::gauge(
+    mood_index, min = 1, max = 10,
+    sectors = flexdashboard::gaugeSectors(success = 1:3, warning = 4:7, danger = 8:10)
+  )
+})
+```
+
+Satirical caption: _“Mood swings may disrupt service. Please remain seated.”_
+
+---
+
+#### Disclaimers
+
+- All overlays are satirical and opt-in.
+- Use for critical reflection, not medical advice.
+- See ETHICS.md for civic reporting boundaries.
