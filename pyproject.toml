@@ -1,0 +1,12 @@
+[tool.poetry]
+name = "cycle-aware-wnba"
+version = "0.1.0"
+description = "A project for cycle aware WNBA"
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+gunicorn = "^20.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.backend"
