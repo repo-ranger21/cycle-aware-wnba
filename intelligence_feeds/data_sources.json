@@ -1,0 +1,6 @@
+{
+    "terra_api": "https://api.tryterra.co",
+    "sportsdata_api": "https://sportsdata.io",
+    "openweathermap_api": "https://openweathermap.org/api",
+    "twitter_api": "https://developer.twitter.com/en/docs"
+}
