@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: cycle-aware-wnba
+    env: python
+    buildCommand: |
+      apt-get update && \
+      apt-get install -y libxml2-dev libxslt1-dev && \
+      poetry install
+    startCommand: poetry run gunicorn q4trackr:app
+    envVars:
+      - key: POETRY_VIRTUALENVS_CREATE
+        value: "false"
+      - key: POETRY_VERSION
+        value: "1.5.1"
+      - key: PYTHON_VERSION
+        value: "3.10"
