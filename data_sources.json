@@ -1,0 +1,351 @@
+{
+  "data_sources": {
+    "clue_terra": {
+      "name": "Clue Cycle Data via Terra API",
+      "description": "Menstrual cycle tracking data including flow intensity, cycle patterns, ovulation predictions, and symptom tracking",
+      "type": "cycle_tracking",
+      "privacy_level": "anonymized",
+      "api_endpoint": "https://api.tryterra.co/v2",
+      "authentication": "api_key",
+      "data_retention_days": 90,
+      "rate_limits": {
+        "requests_per_minute": 60,
+        "requests_per_day": 1000
+      },
+      "data_fields": [
+        "cycle_day",
+        "flow_intensity", 
+        "period_active",
+        "cycle_length",
+        "ovulation_probability",
+        "fertility_window",
+        "symptoms_cramps",
+        "symptoms_mood",
+        "basal_temp",
+        "cervical_fluid"
+      ],
+      "ethical_compliance": {
+        "consent_required": true,
+        "medical_disclaimer": "For research/awareness only, not medical advice",
+        "data_anonymization": true,
+        "audit_trail": true
+      },
+      "implementation_status": "active"
+    },
+    "wearable_oauth": {
+      "name": "Wearable Devices OAuth Integration",
+      "description": "Biometric data from wearable devices including heart rate, sleep, activity, and body temperature",
+      "type": "biometric_monitoring",
+      "privacy_level": "anonymized",
+      "supported_devices": [
+        "fitbit",
+        "garmin", 
+        "oura_ring",
+        "apple_healthkit"
+      ],
+      "authentication": "oauth_2.0",
+      "data_retention_days": 30,
+      "rate_limits": {
+        "varies_by_device": true,
+        "fitbit_requests_per_hour": 150,
+        "oura_requests_per_day": 1000
+      },
+      "data_fields": [
+        "heart_rate",
+        "heart_rate_variability",
+        "resting_heart_rate",
+        "sleep_duration",
+        "sleep_quality",
+        "deep_sleep_minutes",
+        "rem_sleep_minutes",
+        "activity_level",
+        "steps",
+        "calories_burned",
+        "body_temperature",
+        "skin_temperature",
+        "stress_score"
+      ],
+      "device_specific_endpoints": {
+        "fitbit": {
+          "base_url": "https://api.fitbit.com/1/user/-",
+          "token_url": "https://api.fitbit.com/oauth2/token"
+        },
+        "oura": {
+          "base_url": "https://api.ouraring.com/v2/usercollection",
+          "token_url": "https://api.ouraring.com/oauth/token"
+        },
+        "garmin": {
+          "base_url": "https://apis.garmin.com/wellness-api/rest",
+          "token_url": "https://apis.garmin.com/wellness-api/rest/oauth2/token"
+        }
+      },
+      "ethical_compliance": {
+        "consent_required": true,
+        "encryption_at_rest": true,
+        "short_retention": "Due to sensitive biometric nature",
+        "no_health_decisions": true
+      },
+      "implementation_status": "active"
+    },
+    "wnba_sportsdata": {
+      "name": "WNBA Performance Data - SportsData.io",
+      "description": "Comprehensive WNBA game statistics, player performance metrics, and contextual data",
+      "type": "performance_statistics",
+      "privacy_level": "public",
+      "api_endpoint": "https://api.sportsdata.io/v3/wnba",
+      "authentication": "subscription_key",
+      "data_retention_days": 365,
+      "rate_limits": {
+        "requests_per_minute": 60,
+        "requests_per_day": 1000,
+        "free_tier_daily": 100
+      },
+      "data_fields": [
+        "game_id",
+        "player_id",
+        "team",
+        "opponent",
+        "game_date",
+        "home_away",
+        "minutes_played",
+        "points",
+        "rebounds",
+        "assists",
+        "steals", 
+        "blocks",
+        "turnovers",
+        "field_goal_percentage",
+        "three_point_percentage",
+        "free_throw_percentage",
+        "plus_minus",
+        "injury_status",
+        "games_played_season",
+        "player_efficiency_rating"
+      ],
+      "available_endpoints": [
+        "/scores/json/teams",
+        "/scores/json/Players/{season}",
+        "/stats/json/PlayerGameStatsBySeason/{season}",
+        "/stats/json/PlayerSeasonStats/{season}",
+        "/scores/json/Games/{season}",
+        "/scores/json/Injuries/{season}"
+      ],
+      "ethical_compliance": {
+        "public_data_only": true,
+        "no_personal_information": true,
+        "performance_focus": true
+      },
+      "implementation_status": "active"
+    },
+    "weather_openweather": {
+      "name": "Weather Data - OpenWeatherMap",
+      "description": "Environmental context data including temperature, humidity, pressure, and air quality for game locations",
+      "type": "environmental_context",
+      "privacy_level": "public",
+      "api_endpoint": "https://api.openweathermap.org",
+      "authentication": "api_key",
+      "data_retention_days": 90,
+      "rate_limits": {
+        "free_tier_per_minute": 60,
+        "free_tier_per_month": 1000000
+      },
+      "data_fields": [
+        "location",
+        "temperature_f",
+        "feels_like_f", 
+        "humidity_percent",
+        "pressure_hpa",
+        "weather_condition",
+        "weather_description",
+        "cloud_cover_percent",
+        "wind_speed_mph",
+        "wind_direction_deg",
+        "precipitation_mm",
+        "uv_index",
+        "air_quality_index",
+        "heat_index",
+        "weather_severity_score",
+        "season",
+        "temp_comfort"
+      ],
+      "supported_locations": [
+        {
+          "team": "ATL",
+          "city": "Atlanta",
+          "coordinates": {"lat": 33.7490, "lon": -84.3880}
+        },
+        {
+          "team": "CHI", 
+          "city": "Chicago",
+          "coordinates": {"lat": 41.8781, "lon": -87.6298}
+        },
+        {
+          "team": "CONN",
+          "city": "Uncasville",
+          "coordinates": {"lat": 41.7658, "lon": -72.6734}
+        },
+        {
+          "team": "DAL",
+          "city": "Dallas", 
+          "coordinates": {"lat": 32.7767, "lon": -96.7970}
+        },
+        {
+          "team": "IND",
+          "city": "Indianapolis",
+          "coordinates": {"lat": 39.7391, "lon": -86.1612}
+        },
+        {
+          "team": "LAS",
+          "city": "Las Vegas",
+          "coordinates": {"lat": 36.1699, "lon": -115.1398}
+        },
+        {
+          "team": "MIN",
+          "city": "Minneapolis", 
+          "coordinates": {"lat": 44.9537, "lon": -93.2650}
+        },
+        {
+          "team": "NY",
+          "city": "New York",
+          "coordinates": {"lat": 40.7128, "lon": -74.0060}
+        },
+        {
+          "team": "PHX",
+          "city": "Phoenix",
+          "coordinates": {"lat": 33.4484, "lon": -112.0740}
+        },
+        {
+          "team": "SEA",
+          "city": "Seattle",
+          "coordinates": {"lat": 47.6062, "lon": -122.3321}
+        },
+        {
+          "team": "WAS",
+          "city": "Washington",
+          "coordinates": {"lat": 38.9072, "lon": -77.0369}
+        }
+      ],
+      "available_endpoints": [
+        "/data/2.5/weather",
+        "/data/2.5/onecall/timemachine", 
+        "/data/2.5/air_pollution"
+      ],
+      "ethical_compliance": {
+        "public_environmental_data": true,
+        "no_privacy_concerns": true,
+        "research_context": true
+      },
+      "implementation_status": "active"
+    },
+    "sentiment_twitter": {
+      "name": "Social Media Sentiment - Twitter NLP",
+      "description": "Public sentiment analysis of social media mentions, reactions, and discussions related to WNBA players and teams",
+      "type": "sentiment_analysis",
+      "privacy_level": "public",
+      "api_endpoint": "https://api.twitter.com/2",
+      "authentication": "bearer_token",
+      "data_retention_days": 30,
+      "rate_limits": {
+        "search_tweets_per_15min": 300,
+        "monthly_tweet_cap": 500000,
+        "academic_research_higher_limits": true
+      },
+      "data_fields": [
+        "tweet_id",
+        "content",
+        "content_type",
+        "author_id",
+        "created_at",
+        "retweet_count",
+        "like_count",
+        "reply_count",
+        "quote_count",
+        "sentiment_label",
+        "sentiment_score",
+        "positive_score",
+        "negative_score", 
+        "neutral_score",
+        "engagement_score",
+        "viral_potential",
+        "controversy_score",
+        "content_length",
+        "word_count"
+      ],
+      "search_types": [
+        "player_mentions",
+        "game_reactions",
+        "news_coverage",
+        "custom_searches"
+      ],
+      "nlp_methods": [
+        "rule_based_keywords",
+        "external_nlp_service",
+        "sentiment_classification"
+      ],
+      "supported_teams": {
+        "ATL": "atlhawks",
+        "CHI": "chicagosky", 
+        "CONN": "connecticutsun",
+        "DAL": "dallaswings",
+        "IND": "indianafever",
+        "LAS": "lvaces",
+        "MIN": "minnesotalynx",
+        "NY": "nyliberty",
+        "PHX": "phoenixmercury",
+        "SEA": "seattlestorm",
+        "WAS": "washingtonmystics"
+      },
+      "ethical_compliance": {
+        "public_content_only": true,
+        "no_private_messages": true,
+        "no_personal_information": true,
+        "sentiment_research_only": true,
+        "short_retention": "Due to social media sensitivity"
+      },
+      "implementation_status": "active"
+    }
+  },
+  "integration_patterns": {
+    "data_standardization": {
+      "common_fields": [
+        "player_id",
+        "date", 
+        "data_source",
+        "data_type",
+        "anonymized_at"
+      ],
+      "date_format": "YYYY-MM-DD",
+      "anonymization_required": true,
+      "audit_trail_required": true
+    },
+    "ethical_requirements": {
+      "consent_verification": "All data sources must verify athlete consent",
+      "privacy_first": "Anonymization and encryption where applicable",
+      "medical_disclaimer": "Not for medical diagnosis or treatment decisions",
+      "research_only": "Data used for research and awareness purposes",
+      "transparency": "Clear documentation of data usage and retention"
+    },
+    "quality_assurance": {
+      "validation_required": true,
+      "range_checking": "All numeric values validated for reasonable ranges",
+      "date_validation": "No future dates except current weather",
+      "duplicate_detection": "Prevent duplicate records",
+      "error_handling": "Graceful failure with logging"
+    }
+  },
+  "usage_guidelines": {
+    "api_key_management": "Store API keys securely, never in version control",
+    "rate_limiting": "Respect all API rate limits to avoid service disruption",
+    "error_handling": "Implement robust error handling and retry logic",
+    "data_retention": "Respect specified retention periods for each source",
+    "ethical_compliance": "Regular audits of data usage and consent status"
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "created_date": "2024-08-16",
+    "last_updated": "2024-08-16",
+    "total_data_sources": 5,
+    "implementation_status": "active",
+    "documentation_complete": true
+  }
+}
