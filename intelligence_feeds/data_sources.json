@@ -1,0 +1,379 @@
+{
+  "data_sources": {
+    "menstrual_cycle_data": {
+      "source_name": "Clue App via Terra API",
+      "api_provider": "Terra Health API",
+      "primary_endpoint": "https://api.tryterra.co/v2/menstruation",
+      "authentication": "API Key + Developer ID",
+      "data_types": [
+        "flow_intensity",
+        "ovulation_predictions", 
+        "symptom_logs",
+        "cycle_phase_indicators",
+        "basal_body_temperature"
+      ],
+      "rate_limits": {
+        "requests_per_minute": 60,
+        "daily_quota": 1000
+      },
+      "privacy_compliance": [
+        "HIPAA",
+        "GDPR",
+        "CCPA"
+      ],
+      "ethical_requirements": {
+        "explicit_consent": "required",
+        "anonymization": "mandatory",
+        "data_retention": "research_duration_only",
+        "usage_restriction": "health_research_only"
+      },
+      "civic_grade_notes": [
+        "All menstrual data must be opt-in with granular consent",
+        "No individual athlete identification in stored data",
+        "Cycle predictions are probabilistic, not deterministic",
+        "Data used exclusively for health-supportive research"
+      ],
+      "data_quality": {
+        "accuracy": "self_reported",
+        "completeness": "variable_by_user",
+        "temporal_resolution": "daily",
+        "known_limitations": [
+          "Self-reporting bias",
+          "Incomplete cycle tracking",
+          "Algorithm prediction uncertainty"
+        ]
+      },
+      "attribution": "Menstrual cycle data provided by Terra Health API integration with Clue"
+    },
+    
+    "wearable_biometrics": {
+      "oura_ring": {
+        "source_name": "Oura Ring API",
+        "api_provider": "Oura Health Ltd",
+        "primary_endpoint": "https://api.ouraring.com/v2",
+        "authentication": "OAuth 2.0",
+        "data_types": [
+          "heart_rate_variability",
+          "sleep_quality_metrics",
+          "skin_temperature",
+          "readiness_score",
+          "activity_levels"
+        ],
+        "oauth_scopes": [
+          "daily",
+          "heartrate", 
+          "session",
+          "tag",
+          "workout"
+        ],
+        "rate_limits": {
+          "requests_per_minute": 300,
+          "daily_quota": 5000
+        },
+        "privacy_compliance": ["GDPR", "CCPA"],
+        "civic_grade_notes": [
+          "Device-specific consent required for each athlete",
+          "Biometric data anonymized before analysis",
+          "Sleep and recovery metrics support performance insights",
+          "No medical diagnosis or health advice provided"
+        ]
+      },
+      
+      "whoop_band": {
+        "source_name": "WHOOP API",
+        "api_provider": "WHOOP Inc",
+        "primary_endpoint": "https://api.prod.whoop.com/developer/v1",
+        "authentication": "OAuth 2.0",
+        "data_types": [
+          "recovery_metrics",
+          "strain_score",
+          "sleep_performance",
+          "heart_rate_variability",
+          "respiratory_rate"
+        ],
+        "oauth_scopes": [
+          "read:recovery",
+          "read:sleep",
+          "read:workout",
+          "read:profile"
+        ],
+        "rate_limits": {
+          "requests_per_minute": 100,
+          "daily_quota": 2000
+        },
+        "civic_grade_notes": [
+          "WHOOP recovery data highly relevant to cycle impact analysis",
+          "Strain scores provide objective performance measurement",
+          "All data processed with athlete privacy protection"
+        ]
+      },
+      
+      "apple_healthkit": {
+        "source_name": "Apple HealthKit",
+        "api_provider": "Apple Inc",
+        "integration_method": "iOS App with HealthKit Framework",
+        "authentication": "Local iOS Authorization",
+        "data_types": [
+          "heart_rate",
+          "respiratory_rate",
+          "body_temperature",
+          "sleep_analysis",
+          "workout_data"
+        ],
+        "privacy_compliance": ["iOS Privacy Guidelines", "HealthKit Security"],
+        "civic_grade_notes": [
+          "Requires native iOS app implementation",
+          "Data remains on device unless explicitly shared",
+          "Highest level of user control over data sharing",
+          "Apple's privacy-first approach aligns with civic-grade standards"
+        ],
+        "implementation_status": "future_development"
+      }
+    },
+    
+    "wnba_statistics": {
+      "sportsdata_io": {
+        "source_name": "SportsData.io WNBA API",
+        "api_provider": "SportsData LLC",
+        "primary_endpoint": "https://api.sportsdata.io/v3/wnba",
+        "authentication": "Subscription Key",
+        "data_types": [
+          "player_game_statistics",
+          "team_performance_metrics", 
+          "game_schedules",
+          "season_standings",
+          "player_profiles"
+        ],
+        "rate_limits": {
+          "requests_per_month": 1000,
+          "overage_pricing": "available"
+        },
+        "data_coverage": {
+          "seasons": "2008-present",
+          "games": "all_regular_season_playoffs",
+          "statistics": "comprehensive_box_scores"
+        },
+        "civic_grade_notes": [
+          "Official WNBA statistics with high accuracy",
+          "Player performance data used for health-supportive insights only",
+          "No discriminatory use of performance metrics",
+          "Transparent methodology for all statistical analysis"
+        ],
+        "attribution": "Official WNBA statistics provided by SportsData.io"
+      },
+      
+      "nba_com_official": {
+        "source_name": "NBA.com Official Statistics",
+        "api_provider": "National Basketball Association",
+        "primary_endpoint": "https://stats.nba.com/stats",
+        "authentication": "Public API (respectful usage)",
+        "data_types": [
+          "official_player_statistics",
+          "advanced_metrics",
+          "game_logs",
+          "team_statistics"
+        ],
+        "usage_guidelines": {
+          "rate_limiting": "respectful_only",
+          "caching": "recommended",
+          "attribution": "required"
+        },
+        "civic_grade_notes": [
+          "Most authoritative source for WNBA statistics",
+          "Direct from league operations and official scorekeeping",
+          "Public API requires respectful usage patterns",
+          "Must include proper attribution in all use"
+        ],
+        "attribution": "Official NBA/WNBA statistics from NBA.com"
+      }
+    },
+    
+    "environmental_context": {
+      "openweathermap": {
+        "source_name": "OpenWeatherMap API",
+        "api_provider": "OpenWeather Ltd",
+        "primary_endpoint": "https://api.openweathermap.org/data/2.5",
+        "authentication": "API Key",
+        "data_types": [
+          "current_weather",
+          "historical_weather",
+          "temperature_humidity",
+          "atmospheric_pressure",
+          "weather_conditions"
+        ],
+        "rate_limits": {
+          "free_tier": "60_calls_per_minute",
+          "paid_tiers": "higher_limits_available"
+        },
+        "research_relevance": {
+          "hydration_factors": [
+            "temperature",
+            "humidity", 
+            "heat_index",
+            "atmospheric_pressure"
+          ],
+          "performance_impact": "environmental_stress_assessment"
+        },
+        "civic_grade_notes": [
+          "Weather data supports hydration research for athlete health",
+          "Environmental factors may correlate with cycle-related symptoms",
+          "Heat index calculations help assess performance conditions",
+          "No personal location tracking - arena coordinates only"
+        ],
+        "attribution": "Weather data provided by OpenWeatherMap"
+      }
+    },
+    
+    "social_sentiment": {
+      "twitter_api": {
+        "source_name": "Twitter API v2",
+        "api_provider": "X Corp (formerly Twitter)",
+        "primary_endpoint": "https://api.twitter.com/2",
+        "authentication": "OAuth 2.0 / Bearer Token",
+        "data_types": [
+          "public_tweets",
+          "sentiment_analysis",
+          "engagement_metrics",
+          "temporal_patterns"
+        ],
+        "ethical_filtering": {
+          "content_restrictions": [
+            "public_tweets_only",
+            "no_personal_information",
+            "no_harassment_content",
+            "sports_related_only"
+          ],
+          "privacy_protection": [
+            "no_individual_targeting",
+            "aggregated_analysis_only",
+            "sanitized_text_processing",
+            "user_handle_removal"
+          ]
+        },
+        "rate_limits": {
+          "search_tweets": "300_per_15min",
+          "user_timeline": "75_per_15min"
+        },
+        "bias_detection": {
+          "algorithmic_bias_monitoring": "enabled",
+          "demographic_bias_flags": "implemented", 
+          "sentiment_bias_detection": "active",
+          "transparency_reporting": "required"
+        },
+        "civic_grade_notes": [
+          "Social sentiment used for population-level mood analysis only",
+          "Comprehensive bias detection and mitigation implemented",
+          "No individual profiling or targeting",
+          "Aggregated insights support understanding of social context"
+        ],
+        "attribution": "Public social media sentiment analysis via Twitter API"
+      }
+    }
+  },
+  
+  "civic_grade_principles": {
+    "transparency": {
+      "data_sourcing": "All data sources documented with complete API information",
+      "processing_methods": "All data transformations and algorithms documented",
+      "bias_detection": "Algorithmic bias monitoring implemented across all sources",
+      "limitations": "Known data quality issues and uncertainties clearly documented"
+    },
+    
+    "privacy_first": {
+      "anonymization": "All personal identifiers anonymized before analysis",
+      "consent_management": "Explicit opt-in consent required for all data usage",
+      "data_minimization": "Only essential data collected for health research purposes",
+      "retention_limits": "Data retained only for research duration, then deleted"
+    },
+    
+    "ethical_usage": {
+      "non_discrimination": "No data used for athlete selection, exclusion, or discrimination",
+      "health_supportive": "All analysis focused on supporting athlete health and wellbeing", 
+      "research_only": "Data used exclusively for academic and health research",
+      "community_benefit": "Research results shared for broader community benefit"
+    },
+    
+    "scientific_integrity": {
+      "reproducibility": "All methods documented for research reproducibility",
+      "uncertainty_quantification": "Statistical uncertainty included in all predictions",
+      "validation": "Model validation and performance metrics transparently reported",
+      "peer_review": "Research methods open to academic peer review"
+    }
+  },
+  
+  "compliance_framework": {
+    "regulatory_compliance": [
+      "HIPAA - Health Insurance Portability and Accountability Act",
+      "GDPR - General Data Protection Regulation", 
+      "CCPA - California Consumer Privacy Act",
+      "FERPA - Family Educational Rights and Privacy Act"
+    ],
+    
+    "ethical_guidelines": [
+      "Belmont Report Principles (Respect, Beneficence, Justice)",
+      "IEEE Standards for Ethical AI Design",
+      "ACM Code of Ethics and Professional Conduct",
+      "Responsible AI Guidelines for Sports Analytics"
+    ],
+    
+    "audit_requirements": {
+      "data_processing_logs": "Comprehensive logging of all data processing activities",
+      "consent_tracking": "Detailed records of athlete consent and withdrawal",
+      "bias_monitoring": "Regular algorithmic bias assessment and reporting",
+      "security_audits": "Regular security assessments of data handling practices"
+    }
+  },
+  
+  "contributor_onboarding": {
+    "required_reading": [
+      "ETHICS.md - Project ethical framework and guidelines",
+      "CONTRIBUTING.md - Technical and ethical contribution guidelines",
+      "data/schema.md - Data structure and privacy requirements"
+    ],
+    
+    "training_requirements": [
+      "HIPAA Privacy Training (if handling health data)",
+      "Responsible AI and Bias Detection Training",
+      "Sports Analytics Ethics Certification",
+      "API Terms of Service Compliance Training"
+    ],
+    
+    "code_review_process": {
+      "ethical_review": "All data processing code reviewed for ethical compliance",
+      "privacy_assessment": "Privacy impact assessment for new data sources",
+      "bias_testing": "Algorithmic bias testing required for model changes",
+      "documentation_standards": "Comprehensive documentation of all data handling"
+    }
+  },
+  
+  "data_quality_monitoring": {
+    "automated_checks": [
+      "Data completeness validation",
+      "Statistical anomaly detection", 
+      "API response quality monitoring",
+      "Consent verification automation"
+    ],
+    
+    "manual_review": [
+      "Monthly data quality assessment",
+      "Quarterly ethical compliance review",
+      "Annual privacy audit and assessment",
+      "Semi-annual bias detection analysis"
+    ],
+    
+    "alert_systems": [
+      "Data quality degradation alerts",
+      "Consent withdrawal processing alerts",
+      "API rate limit and quota monitoring",
+      "Security incident response system"
+    ]
+  },
+  
+  "version_info": {
+    "schema_version": "1.0",
+    "last_updated": "2024-01-15",
+    "next_review_date": "2024-07-15",
+    "maintainer": "Civic-Grade Analytics Team",
+    "contact": "ethics@cycle-aware-wnba.org"
+  }
+}
