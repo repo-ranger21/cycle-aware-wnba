@@ -1,0 +1,50 @@
+{
+  "name": "cycle-aware-wnba",
+  "version": "1.0.0",
+  "description": "🩸 Cycle-Aware WNBA Predictions. Satire-Powered. Ethically Modeled. \"We don't just model performance. We audit the uterus.\"",
+  "main": "src/q4trackr.js",
+  "scripts": {
+    "start": "node src/q4trackr.js",
+    "dev": "nodemon src/q4trackr.js",
+    "test": "jest",
+    "lint": "eslint src/",
+    "build": "webpack --mode production"
+  },
+  "keywords": [
+    "wnba",
+    "satire",
+    "analytics",
+    "menstrual-cycle",
+    "sports",
+    "prediction",
+    "ethical-ai"
+  ],
+  "author": "Q4Trackr Contributors",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^6.1.5",
+    "dotenv": "^16.0.3",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "jest": "^29.5.0",
+    "eslint": "^8.40.0",
+    "webpack": "^5.84.1",
+    "webpack-cli": "^5.1.1"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/repo-ranger21/cycle-aware-wnba.git"
+  },
+  "bugs": {
+    "url": "https://github.com/repo-ranger21/cycle-aware-wnba/issues"
+  },
+  "homepage": "https://github.com/repo-ranger21/cycle-aware-wnba#readme"
+}
