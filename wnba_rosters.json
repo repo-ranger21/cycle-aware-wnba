@@ -1,0 +1,79 @@
+// Roster data reflects public sources and simulated physiological inputs.
+// This file is for public-good modeling only. No biometric data was exploited.
+[
+  {
+    "player_id": "c71a3f13-9b7e-4e8a-8e4c-0c4e6b6a8d91",
+    "name": "A'ja Wilson",
+    "team": "LVA",
+    "position": "F",
+    "cycle_day": 3,
+    "HRV": 48,
+    "BBT": 97.1,
+    "mood_score": 4,
+    "sleep_quality": 7.2,
+    "pain_score": 2,
+    "roster_status": "active",
+    "expansion_team": false,
+    "last_updated": "2025-08-17T14:12:28Z"
+  },
+  {
+    "player_id": "b2e5b9a4-7c1d-41b9-9c9e-3f2c5c2a5f2e",
+    "name": "Breanna Stewart",
+    "team": "NYL",
+    "position": "F",
+    "cycle_day": 14,
+    "HRV": 52,
+    "BBT": 97.4,
+    "mood_score": 5,
+    "sleep_quality": 8.0,
+    "pain_score": 1,
+    "roster_status": "active",
+    "expansion_team": false,
+    "last_updated": "2025-08-17T14:12:28Z"
+  },
+  {
+    "player_id": "e9c8b2d5-2a52-43a6-bf23-4a5d4c2b7b0e",
+    "name": "Arike Ogunbowale",
+    "team": "DAL",
+    "position": "G",
+    "cycle_day": 21,
+    "HRV": 44,
+    "BBT": 97.2,
+    "mood_score": 3,
+    "sleep_quality": 6.5,
+    "pain_score": 3,
+    "roster_status": "active",
+    "expansion_team": false,
+    "last_updated": "2025-08-17T14:12:28Z"
+  },
+  {
+    "player_id": "d5f0c6e2-8a1c-4c2e-89b7-3b7e6b3f4e5a",
+    "name": "Aliyah Boston",
+    "team": "IND",
+    "position": "C",
+    "cycle_day": 7,
+    "HRV": 46,
+    "BBT": 97.0,
+    "mood_score": 2,
+    "sleep_quality": 7.8,
+    "pain_score": 4,
+    "roster_status": "active",
+    "expansion_team": false,
+    "last_updated": "2025-08-17T14:12:28Z"
+  },
+  {
+    "player_id": "a7b1c9e8-6d4f-4293-bb1a-5e3f2a1c7d8e",
+    "name": "Sabrina Ionescu",
+    "team": "NYL",
+    "position": "G",
+    "cycle_day": 25,
+    "HRV": 50,
+    "BBT": 97.5,
+    "mood_score": 5,
+    "sleep_quality": 6.9,
+    "pain_score": 1,
+    "roster_status": "active",
+    "expansion_team": false,
+    "last_updated": "2025-08-17T14:12:28Z"
+  }
+]
