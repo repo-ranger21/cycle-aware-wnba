@@ -1,0 +1,11 @@
+athlete_id,game_date,cycle_day,menstrual_phase,impact_flag
+WNBA_001,2024-05-15,5,menstrual,0
+WNBA_001,2024-05-18,8,follicular,0
+WNBA_001,2024-05-22,12,follicular,0
+WNBA_001,2024-05-25,15,ovulatory,1
+WNBA_001,2024-05-28,18,luteal,1
+WNBA_002,2024-05-15,20,luteal,1
+WNBA_002,2024-05-18,23,luteal,0
+WNBA_002,2024-05-22,27,luteal,0
+WNBA_002,2024-05-25,2,menstrual,0
+WNBA_002,2024-05-28,5,menstrual,0
