@@ -22,7 +22,7 @@ def load_fallback_rosters(path="fallbacks/wnba_rosters_fallback.json"):
 # ── WNBA API fetch ─────────────────────────────────────────────────────────────
 def fetch_all_players(season: str = "2025"):
     try:
-        resp = commonallplayers.CommonAllPlayers(season=season, league_id="10").get_dict()
+        resp = commonallplayers.CommonAllPlayers(season="2025", league_id="10").get_dict()
         cols = resp["resultSets"][0]["headers"]
         rows = resp["resultSets"][0]["rowSet"]
         return [dict(zip(cols, row)) for row in rows]
