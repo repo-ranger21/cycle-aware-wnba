@@ -2,7 +2,7 @@ import os
 import json
 from datetime import datetime
 from supabase import create_client
-from wnba_api.stats.endpoints import commonallplayers
+from nba_api.stats.endpoints import commonallplayers
 
 # ── Supabase setup ─────────────────────────────────────────────────────────────
 SUPABASE_URL = os.getenv("SUPABASE_URL")
