@@ -1,0 +1,39 @@
+name: Q4Trackr Validator 🩸
+
+on:
+  push:
+    branches: [main, dev, staging]
+  pull_request:
+    branches: [main, dev, staging]
+
+jobs:
+  validate-rosters:
+    name: Validate Rosters and Environment
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🧾 Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🧪 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: 🩺 Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: ✅ Run validator
+        run: |
+          make validate
+
+  check-makefile-parity:
+    name: Makefile Parity Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🧾 Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🔍 Check Makefile parity
+        run: |
+          make check-parity
